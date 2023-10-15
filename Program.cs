@@ -1,10 +1,12 @@
-using Core.Services.Abstraction;
-using Core.Services.Implementation;
 using Domain.Models;
-using Domain.Repositories.Abstraction;
-using Domain.Repositories.Implementation;
+using Domain.Repositories.Implementors;
+using Domain.Repositories.Interfaces;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Azure.Cosmos;
-
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Shared.Services.Implementors;
+using Shared.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
