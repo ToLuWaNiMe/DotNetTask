@@ -6,24 +6,24 @@ namespace DotNetTask.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProgramController : ControllerBase
+    public class ProgramDetailsController : ControllerBase
     {
-        private readonly IProgramDetailsService _programService;
+        private readonly IProgramDetailsService _programDetailsService;
 
-        public ProgramController(IProgramDetailsService programService)
+        public ProgramDetailsController(IProgramDetailsService programDetailsService)
         {
-            _programService = programService;
+            _programDetailsService = programDetailsService;
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> CreateProgram([FromBody] ProgramDto entity)
+        public async Task<IActionResult> CreateProgram([FromBody] ProgramDetailsDto entity)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var createdProgram = await _programService.AddAsync(entity);
+            var createdProgram = await _programDetailsService.AddAsync(entity);
             if (createdProgram)
             {
                 return Ok(createdProgram);
@@ -39,7 +39,7 @@ namespace DotNetTask.Controllers
 
         public async Task<IActionResult> GetProgram(string id)
         {
-            var programDetail = await _programService.GetByIdAsync(id);
+            var programDetail = await _programDetailsService.GetByIdAsync(id);
             if (programDetail == null)
             {
                 return NotFound($"Program with ID {id} not found.");
@@ -51,7 +51,7 @@ namespace DotNetTask.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetPrograms()
         {
-            var programDetails = await _programService.GetAllAsync();
+            var programDetails = await _programDetailsService.GetAllAsync();
 
             if (programDetails == null)
             {
@@ -60,9 +60,9 @@ namespace DotNetTask.Controllers
             return Ok(programDetails);
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProgram(string id, [FromBody] ProgramDto updateModel)
+        public async Task<IActionResult> UpdateProgram(string id, [FromBody] ProgramDetailsDto updateModel)
         {
-            var updated = await _programService.UpdateAsync(id, updateModel);
+            var updated = await _programDetailsService.UpdateAsync(id, updateModel);
 
             if (updated)
             {

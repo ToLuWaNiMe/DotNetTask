@@ -3,6 +3,8 @@ using Domain.Repositories.Interfaces;
 using Microsoft.Azure.Cosmos;
 using Shared.DTOs;
 using Shared.Services.Interfaces;
+using Microsoft.Extensions.Configuration;
+
 
 namespace Shared.Services.Implementors
 {
@@ -19,7 +21,7 @@ namespace Shared.Services.Implementors
             _repository = repository;
         }
 
-        public async Task<bool> AddAsync(ProgramDto entity)
+        public async Task<bool> AddAsync(ProgramDetailsDto entity)
         {
             var programDetails = new ProgramDetails
             {
@@ -93,7 +95,7 @@ namespace Shared.Services.Implementors
             }
         }
 
-        public async Task<bool> UpdateAsync(string id, ProgramDto updateDto)
+        public async Task<bool> UpdateAsync(string id, ProgramDetailsDto updateDto)
         {
             try
             {

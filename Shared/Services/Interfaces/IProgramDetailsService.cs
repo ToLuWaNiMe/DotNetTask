@@ -7,8 +7,8 @@ namespace Shared.Services.Interfaces
     {
         Task<IEnumerable<ProgramDetails>> GetAllAsync();
         Task<ProgramDetails> GetByIdAsync(string id);
-        Task<bool> AddAsync(ProgramDto entity);
-        Task<bool> UpdateAsync(string id, ProgramDto updateDto);
+        Task<bool> AddAsync(ProgramDetailsDto entity);
+        Task<bool> UpdateAsync(string id, ProgramDetailsDto updateDto);
         Task<bool> DeleteAsync(string id);
     }
 }

@@ -10,7 +10,7 @@ namespace Domain.Repositories.Implementors
         private readonly Container _container;
 
 
-        public Repository(CosmosClient cosmosClient, string databaseName, string containerName)
+        public Repository(CosmosClient cosmosClient, CosmosClient databaseName, string containerName)
         {
             _container = cosmosClient.GetContainer(databaseName, containerName);
         }

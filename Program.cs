@@ -53,7 +53,7 @@ builder.Services.AddScoped<IRepository<ApplicationForm>>(provider =>
 
 builder.Services.AddScoped<IRepository<WorkFlow>>(provider =>
 {
-    var cosmosClient = provider.GetRequiredService<CosmosClient>();
+    var cosmosClient = provider.GetRequiredService<CosmosClient>();upd
     return new Repository<WorkFlow>(cosmosClient, databaseName, containerName);
 });
 
