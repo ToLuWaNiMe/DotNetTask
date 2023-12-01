@@ -2,7 +2,7 @@
 
 namespace Shared.DTOs
 {
-    public class ProgramInformationDto
+    public class ProgramInformationDto 
     {
         [Required]
         public string Type { get; set; }
