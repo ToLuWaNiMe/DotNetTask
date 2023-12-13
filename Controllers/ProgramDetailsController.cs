@@ -20,7 +20,7 @@ namespace DotNetTask.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest(ModelState); 
             }
 
             var createdProgram = await _programDetailsService.AddAsync(entity);
