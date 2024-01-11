@@ -3,7 +3,7 @@ using Shared.Services.Interfaces;
 
 namespace DotNetTask.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
     [ApiController]
     public class PreviewController : ControllerBase
     {
