@@ -10,7 +10,7 @@ namespace DotNetTask.Controllers
         private readonly IPreviewService _previewService;
         public PreviewController(IPreviewService previewService)
         {
-            _previewService = previewService; 
+            _previewService = previewService;
         }
 
         [HttpGet("{id}")]
