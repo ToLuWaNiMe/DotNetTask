@@ -22,7 +22,6 @@ namespace DotNetTask.Controllers
             {
                 return NotFound($"Preview with ID {id} not found.");
             } 
-
             return Ok(preview);
         }
 
