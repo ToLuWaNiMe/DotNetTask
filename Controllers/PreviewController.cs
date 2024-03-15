@@ -25,6 +25,7 @@ namespace DotNetTask.Controllers
             return Ok(preview);
         }
 
+
         [HttpGet("all")]
         public async Task<IActionResult> GetPreviews()
         {
