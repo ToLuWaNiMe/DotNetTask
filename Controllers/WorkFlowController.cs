@@ -25,7 +25,6 @@ namespace DotNetTask.Controllers
             return Ok(workFlow);
         }
 
-
         [HttpGet("all")]
         public async Task<IActionResult> GetWorkFlow()
         {
