@@ -19,7 +19,6 @@ IConfigurationRoot configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
             .Build();
 
-
 string endpointUri = configuration.GetSection("CosmosDbSettings:EndpointUri").Value;
 string primaryKey = configuration.GetSection("CosmosDbSettings:PrimaryKey").Value;
 string databaseName = configuration.GetSection("CosmosDbSettings:DatabaseName").Value;
