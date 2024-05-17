@@ -49,7 +49,6 @@ namespace Shared.Services.Implementors
             {
                 return true;
             }
-
             return false;
         }
 
