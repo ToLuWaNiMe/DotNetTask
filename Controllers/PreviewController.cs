@@ -16,6 +16,7 @@ namespace DotNetTask.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPreview(string id)
         {
+            
             var preview = await _previewService.GetByIdAsync(id);
             if (preview == null)
             {
