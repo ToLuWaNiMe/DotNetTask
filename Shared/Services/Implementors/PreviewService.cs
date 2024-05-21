@@ -42,7 +42,6 @@ namespace Shared.Services.Implementors
                     Qualification = entity.ProgramInformation.Qualification
                 }
             };
-
             var response = await _container.CreateItemAsync(preview);
 
             if (response.StatusCode == System.Net.HttpStatusCode.Created)
